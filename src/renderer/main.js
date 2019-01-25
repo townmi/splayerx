@@ -85,8 +85,15 @@ Vue.use(VueAnalytics, {
   id: (process.env.NODE_ENV === 'production') ? 'UA-2468227-6' : 'UA-2468227-5',
   router,
   set: [
-    { field: 'SPlayerClientVersion', value: electron.remote.app.getVersion() },
+    { field: 'dimension1', value: electron.remote.app.getVersion() },
+    // { field: 'checkProtocolTask', value: () => {} },
+    // { field: 'checkStorageTask', value: () => {} },
   ],
+  debug: {
+    enabled: true, // default value
+    trace: true, // default value
+    sendHitTask: true, // default value
+  },
 });
 
 Vue.mixin(helpers);
